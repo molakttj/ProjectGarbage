@@ -2,8 +2,8 @@
 //  IntroLayer.m
 //  ProjectGarbage
 //
-//  Created by Andrzej Leśniak on 05.06.2013.
-//  Copyright Andrzej Leśniak 2013. All rights reserved.
+//  Created by Michał Leśniak on 05.06.2013.
+//  Copyright Michał Leśniak 2013. All rights reserved.
 //
 
 

@@ -2,18 +2,31 @@
 //  HelloWorldLayer.m
 //  ProjectGarbage
 //
-//  Created by Andrzej Leśniak on 05.06.2013.
-//  Copyright Andrzej Leśniak 2013. All rights reserved.
+//  Created by Michał Leśniak on 05.06.2013.
+//  Copyright Michał Leśniak 2013. All rights reserved.
 //
 
 
 // Import the interfaces
 #import "HelloWorldLayer.h"
+#import "CCTouchDispatcher.h"
+#import "HouseClass.h"
+#import "DumpsterClass.h"
+#import "EnemyClass.h"
+#import "EnemyHandler.h"
 
 // Needed to obtain the Navigation Controller
 #import "AppDelegate.h"
 
 #pragma mark - HelloWorldLayer
+
+@class HouseClass;
+
+HouseClass* testHouse[2];
+DumpsterClass* testDumpster;
+EnemyClass* testEnemy[10];
+EnemyHandler *singleHandler;
+
 
 // HelloWorldLayer implementation
 @implementation HelloWorldLayer
@@ -41,7 +54,7 @@
 	// Apple recommends to re-assign "self" with the "super's" return value
 	if( (self=[super init]) ) {
 		
-		// create and initialize a Label
+		/*// create and initialize a Label
 		CCLabelTTF *label = [CCLabelTTF labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
 
 		// ask director for the window size
@@ -100,21 +113,91 @@
 		[menu setPosition:ccp( size.width/2, size.height/2 - 50)];
 		
 		// Add the menu to the layer
-		[self addChild:menu];
-
+		[self addChild:menu];*/
+        
+        testHouse[0] = [[HouseClass alloc] initWithFile:@"reverseButtonOFF.png" :CGPointZero :CGSizeZero :1 :YES: 20];
+        [self addChild:[testHouse[0] getSprite]];
+        testHouse[1] = [[HouseClass alloc] initWithFile:@"Icon.png" :[testHouse[0] getSprite].position :[testHouse[0] getSprite].contentSize :1 :YES: 20];
+        [self addChild:[testHouse[1] getSprite]];
+        
+        testDumpster = [[DumpsterClass alloc] initWithFile:@"Grafika/smieciara/smieciara.png"];
+        [self addChild:[testDumpster getSprite]];
+        
+        for (int i = 0; i < 10; i++)
+        {
+            testEnemy[i] = [[EnemyClass alloc] initWithFile:@"Grafika/smieciara/smieciara.png": [testHouse[0] getVelocity]];
+            [testEnemy[i] setPos:[testEnemy[i] getSprite].position.x :[testEnemy[i] getSprite].position.y + (118*2)*i];
+            [self addChild:[testEnemy[i] getSprite]];
+        }
+        
+        singleHandler = [[EnemyHandler alloc] init];
+        for (int i = 0; i < 100; i++)
+            [singleHandler nextRow];
+        
+        CGSize size = [[CCDirector sharedDirector] winSize];
+        self.TouchEnabled = YES;
+        self.AccelerometerEnabled = YES;
+        [self schedule:@selector(nextFrame:)];
 	}
 	return self;
 }
+-(void) enemyHandler: (int) k{
+    if ([testEnemy[k] canDestroy]){
+        NSLog(@"HIHI");
+    [testEnemy[k] reset:@"Grafika/smieciara/smieciara.png" :[testEnemy[k] getVelocity]];
+    }
+}
+
+- (void) nextFrame: (ccTime)dt //Main loop
+{
+    [testHouse[0] update:dt];
+    [testHouse[1] update:dt];
+    [testDumpster update:dt];
+    
+    for (int i = 0; i < 10; i++)
+    {
+        if (testEnemy[i]){
+            [testEnemy[i] update:dt];
+            
+            if ([testEnemy[i] collisionWithPlayer:[testDumpster getSprite]]){
+            [self pauseSchedulerAndActions];
+            }
+            
+            [self enemyHandler: i];
+        }
+    }
+}
+
 
 // on "dealloc" you need to release all your retained objects
 - (void) dealloc
 {
-	// in case you have something to dealloc, do it in this method
-	// in this particular example nothing needs to be released.
-	// cocos2d will automatically release all the children (Label)
-	
-	// don't forget to call "super dealloc"
+
+    
 	[super dealloc];
+}
+
+-(void) registerWithTouchDispatcher
+{
+	[[[CCDirector sharedDirector] touchDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+}
+
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    return YES;
+}
+- (void)ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+
+}
+- (void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+
+}
+-(void) accelerometer:(UIAccelerometer *)accelerometer didAccelerate:(UIAcceleration *)acceleration
+{
+    [testDumpster accelerometer:accelerometer didAccelerate:acceleration];
 }
 
 #pragma mark GameKit delegate

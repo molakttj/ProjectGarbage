@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		881C6A3117679A2B00EC83A6 /* Grafika in Resources */ = {isa = PBXBuildFile; fileRef = 881C6A3017679A2B00EC83A6 /* Grafika */; };
+		883990E61772A1C000C10502 /* EnemyHandler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 883990E51772A1C000C10502 /* EnemyHandler.mm */; };
+		887DFDDB1770F3D8001E2C18 /* EnemyClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 887DFDDA1770F3D8001E2C18 /* EnemyClass.m */; };
+		88A1CC3717611A9800496284 /* reverseButtonOFF.png in Resources */ = {isa = PBXBuildFile; fileRef = 88A1CC3617611A9800496284 /* reverseButtonOFF.png */; };
+		88A1CC3A17612A5C00496284 /* DumpsterClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1CC3917612A5C00496284 /* DumpsterClass.m */; };
 		88A1E3A3175FCCB100575C00 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E3A2175FCCB100575C00 /* QuartzCore.framework */; };
 		88A1E3A5175FCCB100575C00 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E3A4175FCCB100575C00 /* OpenGLES.framework */; };
 		88A1E3A7175FCCB100575C00 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88A1E3A6175FCCB100575C00 /* OpenAL.framework */; };
@@ -140,9 +145,18 @@
 		88A1E546175FCCB400575C00 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E545175FCCB400575C00 /* AppDelegate.m */; };
 		88A1E549175FCCB400575C00 /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E548175FCCB400575C00 /* HelloWorldLayer.m */; };
 		88A1E54C175FCCB400575C00 /* IntroLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E54B175FCCB400575C00 /* IntroLayer.m */; };
+		88A1E554175FD3DD00575C00 /* HouseClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 88A1E553175FD3DD00575C00 /* HouseClass.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		881C6A3017679A2B00EC83A6 /* Grafika */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Grafika; path = Resources/Grafika; sourceTree = "<group>"; };
+		883990E41772A1C000C10502 /* EnemyHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyHandler.h; sourceTree = "<group>"; };
+		883990E51772A1C000C10502 /* EnemyHandler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EnemyHandler.mm; sourceTree = "<group>"; };
+		887DFDD91770F3D8001E2C18 /* EnemyClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EnemyClass.h; sourceTree = "<group>"; };
+		887DFDDA1770F3D8001E2C18 /* EnemyClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EnemyClass.m; sourceTree = "<group>"; };
+		88A1CC3617611A9800496284 /* reverseButtonOFF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = reverseButtonOFF.png; path = Resources/reverseButtonOFF.png; sourceTree = "<group>"; };
+		88A1CC3817612A5C00496284 /* DumpsterClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DumpsterClass.h; sourceTree = "<group>"; };
+		88A1CC3917612A5C00496284 /* DumpsterClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DumpsterClass.m; sourceTree = "<group>"; };
 		88A1E39F175FCCB100575C00 /* ProjectGarbage.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ProjectGarbage.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A1E3A2175FCCB100575C00 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		88A1E3A4175FCCB100575C00 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
@@ -422,6 +436,8 @@
 		88A1E548175FCCB400575C00 /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		88A1E54A175FCCB400575C00 /* IntroLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntroLayer.h; sourceTree = "<group>"; };
 		88A1E54B175FCCB400575C00 /* IntroLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntroLayer.m; sourceTree = "<group>"; };
+		88A1E552175FD3DD00575C00 /* HouseClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseClass.h; sourceTree = "<group>"; };
+		88A1E553175FD3DD00575C00 /* HouseClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseClass.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -486,6 +502,14 @@
 				88A1E545175FCCB400575C00 /* AppDelegate.m */,
 				88A1E547175FCCB400575C00 /* HelloWorldLayer.h */,
 				88A1E548175FCCB400575C00 /* HelloWorldLayer.m */,
+				88A1CC3817612A5C00496284 /* DumpsterClass.h */,
+				88A1CC3917612A5C00496284 /* DumpsterClass.m */,
+				887DFDD91770F3D8001E2C18 /* EnemyClass.h */,
+				887DFDDA1770F3D8001E2C18 /* EnemyClass.m */,
+				883990E41772A1C000C10502 /* EnemyHandler.h */,
+				883990E51772A1C000C10502 /* EnemyHandler.mm */,
+				88A1E552175FD3DD00575C00 /* HouseClass.h */,
+				88A1E553175FD3DD00575C00 /* HouseClass.m */,
 				88A1E54A175FCCB400575C00 /* IntroLayer.h */,
 				88A1E54B175FCCB400575C00 /* IntroLayer.m */,
 				88A1E3B7175FCCB100575C00 /* Resources */,
@@ -498,6 +522,8 @@
 		88A1E3B7175FCCB100575C00 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				881C6A3017679A2B00EC83A6 /* Grafika */,
+				88A1CC3617611A9800496284 /* reverseButtonOFF.png */,
 				88A1E3B8175FCCB100575C00 /* Default.png */,
 				88A1E3BA175FCCB100575C00 /* Default@2x.png */,
 				88A1E3BC175FCCB100575C00 /* Default-568h@2x.png */,
@@ -937,6 +963,8 @@
 				88A1E3CB175FCCB100575C00 /* Icon@2x.png in Resources */,
 				88A1E3CE175FCCB100575C00 /* iTunesArtwork in Resources */,
 				88A1E524175FCCB300575C00 /* ChangeLog in Resources */,
+				88A1CC3717611A9800496284 /* reverseButtonOFF.png in Resources */,
+				881C6A3117679A2B00EC83A6 /* Grafika in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1058,6 +1086,10 @@
 				88A1E546175FCCB400575C00 /* AppDelegate.m in Sources */,
 				88A1E549175FCCB400575C00 /* HelloWorldLayer.m in Sources */,
 				88A1E54C175FCCB400575C00 /* IntroLayer.m in Sources */,
+				88A1E554175FD3DD00575C00 /* HouseClass.m in Sources */,
+				88A1CC3A17612A5C00496284 /* DumpsterClass.m in Sources */,
+				887DFDDB1770F3D8001E2C18 /* EnemyClass.m in Sources */,
+				883990E61772A1C000C10502 /* EnemyHandler.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1120,6 +1152,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -1139,6 +1172,7 @@
 					"-ObjC",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				WRAPPER_EXTENSION = app;
 			};
@@ -1163,6 +1197,7 @@
 				88A1E551175FCCB400575C00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

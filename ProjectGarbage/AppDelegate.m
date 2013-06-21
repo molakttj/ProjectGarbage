@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  ProjectGarbage
 //
-//  Created by Andrzej Leśniak on 05.06.2013.
-//  Copyright Andrzej Leśniak 2013. All rights reserved.
+//  Created by Michał Leśniak on 05.06.2013.
+//  Copyright Michał Leśniak 2013. All rights reserved.
 //
 
 #import "cocos2d.h"
@@ -20,10 +20,10 @@
 	
 	// iPhone only
 	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationMaskLandscape;
+		return UIInterfaceOrientationMaskPortrait;
 	
 	// iPad only
-	return UIInterfaceOrientationMaskLandscape;
+	return UIInterfaceOrientationMaskPortrait;
 }
 
 // Supported orientations. Customize it for your own needs
@@ -32,11 +32,11 @@
 {
 	// iPhone only
 	if( [[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone )
-		return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+		return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 	
 	// iPad only
 	// iPhone only
-	return UIInterfaceOrientationIsLandscape(interfaceOrientation);
+	return UIInterfaceOrientationIsPortrait(interfaceOrientation);
 }
 
 // This is needed for iOS4 and iOS5 in order to ensure
@@ -93,6 +93,8 @@
 	
 	// set FPS at 60
 	[director_ setAnimationInterval:1.0/60];
+    //set Accelelometer ~dopisek wlasny
+    [[UIAccelerometer sharedAccelerometer] setUpdateInterval:1/60];
 	
 	// attach the openglView to the director
 	[director_ setView:glView];
